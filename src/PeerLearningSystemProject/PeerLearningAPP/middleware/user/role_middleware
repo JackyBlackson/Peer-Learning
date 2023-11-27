@@ -1,0 +1,17 @@
+from PeerLearningAPP.utilities.basic_util import generate_random_string, Enum
+from PeerLearningAPP.models import User
+
+class RoleType(Enum):
+    def __init__(self, *args):
+        super().__init__('admin', 'teacher', 'assitant', 'student', 'visitor')
+        
+def check_role (user : User, role: int) -> bool:
+    if(user is None):
+        return False
+    elif (user.RoleType != role):
+        return False
+    else:
+        return True
+        
+    
+
